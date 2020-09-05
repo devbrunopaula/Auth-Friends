@@ -32,7 +32,7 @@ function Navigation() {
               Home
             </NavLink>
 
-            <NavLink to='/friends'>Friends</NavLink>
+            <NavLink to='/add'>Add Friends</NavLink>
           </Nav>
 
           <Form inline>

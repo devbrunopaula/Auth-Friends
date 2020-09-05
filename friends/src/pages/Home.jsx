@@ -3,6 +3,10 @@ import {Button} from 'react-bootstrap'
 import {apiAuth} from '../utils/auth'
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchUserApi, userError} from '../redux/actions/userActions'
+import Friends from './Friends'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Sidebar from './Sidebar'
 
 function Home() {
   const dispatch = useDispatch()
@@ -11,13 +15,16 @@ function Home() {
   useEffect(() => {
     dispatch(fetchUserApi())
   }, [])
-  console.log('friends', friends)
+
   return (
     <div>
-      <h1>Home</h1>
-      {friends.map((friend) => (
-        <h1>{friend.name}</h1>
-      ))}
+      <Row>
+        <Col>
+          {friends.map((friend) => (
+            <Friends key={friend.id} data={friend} />
+          ))}
+        </Col>
+      </Row>
     </div>
   )
 }

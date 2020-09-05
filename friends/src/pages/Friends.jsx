@@ -1,11 +1,9 @@
-import React, {useEffect} from 'react'
-import {axiosWithAuth} from '../utils/auth'
-import axios from 'axios'
+import React from 'react'
 
-function Friends() {
+function Friends({data}) {
   return (
     <div>
-      <h1>Friends</h1>
+      <h1>{data.name}</h1>
     </div>
   )
 }
